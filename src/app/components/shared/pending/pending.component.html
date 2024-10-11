@@ -1,0 +1,44 @@
+<!-- Pending Requests -->
+<div class="card p-4 mt-4"style="background-color: #f8f9fa; border-radius: 15px;">
+  <h5>
+    <i class="fas fa-clock me-2 text-success"></i>Pending Requests
+  </h5>
+  <hr>
+  <div class="row">
+    <div class="col-md-4 vacation-card m-2" *ngFor="let request of pendingRequests">
+      <!-- DATA FOR EACH CARD -->
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="d-flex mb-3 align-items-center">
+            <img
+              [src]="request.profileImage"
+              alt="Profile Image" class="rounded-circle me-3" width="50" height="50">
+            <h5 class="mb-0">{{ request.name }}</h5>
+          </div>
+
+          <p class="font-weight-bold text-secondary">Submitted on:</p>
+          <p class="strong-dark-gray">{{ request.submittedOn }}</p>
+
+          <p class="font-weight-bold text-secondary">Duration:</p>
+          <p class="strong-dark-gray">{{ request.duration }}</p>
+
+          <br>
+
+          <p class="font-weight-bold text-secondary">Currently at:</p>
+          <p class="font-weight-bold">{{ request.currentAt }}</p>
+
+          <br>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+  <!-- VIEW MORE -->
+<div class="text-end mt-3">
+  <a routerLink="/employee-requests" class="text-success text-decoration-none">
+    View More
+    <i class="fas fa-angle-right ms-2"></i>
+  </a>
+</div>
+

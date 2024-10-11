@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <div class="vacation-container card shadow-sm p-4" id="vacationContainer" style="border-radius: 20px; background-color: #f8f9fa;">
+    <!-- Top Header with Icon and Search Bar -->
+    <div class="vacation-header d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-clipboard-list fa-2x text-success mr-3"></i>
+        <h5 class="mb-0">Vacation Requests</h5>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar d-flex align-items-center" style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 30px; padding: 5px 15px; width: 250px; background-color: white;">
+        <i class="fas fa-search" style="color: green;"></i>
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." (input)="filterRequests()" style="border: none; outline: none; flex: 1; background-color: transparent; padding-left: 10px;" />
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Vacation Request Cards -->
+    <div class="row">
+      <div class="col-md-4" *ngFor="let request of filteredRequests">
+        <div class="vacation-card card border-0 shadow-sm mt-4 text-center p-3" style="border-radius: 15px; background-color: white;">
+          <img [src]="request.img" alt="{{ request.name }}" class="rounded-circle mx-auto" style="width: 80px; height: 80px;" />
+          <h5 [innerHTML]="request.name | highlightSearch: searchTerm"></h5>
+
+          <p class="text-muted mb-1" style="font-size: 0.9rem;">
+            <strong>Submitted on:</strong> {{ request.submittedOn | date:'MM/dd/yyyy' }}
+          </p>
+
+          <p class="text-muted mb-1" style="font-size: 0.9rem;">
+            <strong>Duration:</strong> <span [innerHTML]="request.duration | highlightSearch: searchTerm"></span>
+          </p>
+
+          <p class="text-muted mb-1" style="font-size: 0.9rem;">
+            <strong>Salary:</strong><span [innerHTML]="request.salary.toString() | highlightSearch: searchTerm"></span>
+          </p>
+
+          <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-outline-danger" style="width: 45%; font-size: 0.9rem;">Decline</button>
+            <button class="btn btn-success" style="width: 45%; font-size: 0.9rem;">Approve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- View More  -->
+    <div class="text-end mt-3">
+      <a routerLink="/employee-requests" class="text-success text-decoration-none">View More <i class="fas fa-angle-right ms-2"></i></a>
+    </div>
+  </div>
+</div>

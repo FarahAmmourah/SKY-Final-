@@ -1,0 +1,24 @@
+<!-- SWAP PAGES -->
+<div class="pagination-container" style="width: 250px; margin: 0 auto;"> 
+  <ul class="pagination rounded-pill justify-content-center p-2" style="background-color: #eaeaeb; padding: 10px; border-radius: 25px;">
+      <li class="page-item">
+          <a class="page-link text-dark" routerLink="/employee-requests" style="border: none; background-color: transparent;">
+              <i class="fas fa-chevron-left"></i>
+          </a>
+      </li>
+      <li class="page-item" style="margin: 0 5px;">
+          <a routerLink="/employee-requests" class="page-link" style="border-radius: 50%; background-color: transparent; color: #000; padding: 8px 12px;" [class.active]="currentPage === 1">1</a>
+      </li>
+      <li class="page-item" style="margin: 0 5px;">
+          <a routerLink="/pagetwo" class="page-link" style="border-radius: 50%; background-color: transparent; color: #000; padding: 8px 12px;" [class.active]="currentPage === 2">2</a>
+      </li>
+      <li class="page-item" style="margin: 0 5px;">
+          <a routerLink="/pagethree" class="page-link" style="border-radius: 50%; background-color: transparent; color: #000; padding: 8px 12px;" [class.active]="currentPage === 3">3</a>
+      </li>
+      <li class="page-item">
+          <a class="page-link text-dark" routerLink="/pagethree" style="border: none; background-color: transparent;">
+              <i class="fas fa-chevron-right"></i>
+          </a>
+      </li>
+  </ul>
+</div>

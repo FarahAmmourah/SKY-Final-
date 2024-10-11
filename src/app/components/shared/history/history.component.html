@@ -1,0 +1,20 @@
+<!-- History Section -->
+<div class="card custom-history p-4 mt-4" style="background-color: #f8f9fa; border-radius: 15px;">
+  <h5>
+    <i class="fas fa-clock me-2 text-success"></i>History
+  </h5>
+  <hr>
+  <div class="row">
+    <!--CARD-->
+    <div class="col-md-3" *ngFor="let vacation of vacationHistory">
+      <div class="card p-2 mb-3 shadow">
+        <p><strong>{{ vacation.type }}</strong><br> {{ vacation.startDate }} - {{ vacation.endDate }} <br> {{ vacation.days }} days <br> Approved by: {{ vacation.approvedBy }}</p>
+      </div>
+    </div>
+
+  </div>
+  <!--VIEW MORE-->
+  <div class="text-end mt-3">
+    <a href="#" class="text-success text-decoration-none">View More<i class="fas fa-angle-right ms-2"></i></a>
+  </div>
+</div>

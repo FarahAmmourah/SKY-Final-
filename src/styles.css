@@ -1,0 +1,12 @@
+.highlighter{
+  background-color: pink;
+}
+@media (max-width: 768px) {
+  .vacation-header h5 {
+    font-size: 18px;
+  }
+
+  .vacation-card {
+    margin-bottom: 15px;
+  }
+}

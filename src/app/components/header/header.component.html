@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top" id="navbar-placeholder">
+  <a class="navbar-brand text-white m-1" routerLink="/home">Sky Academy</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- Left side: Sky Academy -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <!-- Home Link -->
+        <a class="nav-link text-white"
+           routerLink="/employee-home"
+           routerLinkActive="active-link"
+           [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <!-- Profiles Link-->
+        <a class="nav-link text-white"
+           routerLink="/employee-profile"
+           routerLinkActive="active-link">
+          Profiles
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/reports" routerLinkActive="active-link">Reports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/settings" routerLinkActive="active-link">Settings</a>
+      </li>
+    </ul>
+
+    <!-- Right side: Icons -->
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#"><i class="fas fa-bell"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#"><i class="fas fa-user"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
